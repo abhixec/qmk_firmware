@@ -2,17 +2,16 @@
 
 enum layers {
     _QWERTY,
-    _RAISE,
+    _COLEMAK,
     _LOWER,
-    _ADJUST,
-    _COLEMAK
+    _RAISE,
+    _ADJUST
     
 };
 
-enum planck_keycodes {
-  QWERTY = SAFE_RANGE,
-  COLEMAK,
-  BACKLIT
+enum planck_lp{
+	       QWERTY= SAFE_RANGE,
+	       COLEMAK
 };
 
 // Readability keycodes
@@ -30,7 +29,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TAB,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_G,    KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN, KC_BSPC,
     KC_ESC,  KC_A,    KC_R,    KC_S,    KC_T,    KC_D,    KC_H,    KC_N,    KC_E,    KC_I,    KC_O,    KC_QUOT,
     KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_K,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_ENT ,
-    BACKLIT, KC_LCTL, KC_LALT, KC_LGUI, LOWER,   KC_SPC,  KC_SPC,  RAISE,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
+    KC_PIPE, KC_LCTL, KC_LALT, KC_LGUI, LOWER,   KC_SPC,  KC_SPC,  RAISE,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
   ),
   [_LOWER] = LAYOUT_ortho_4x12(
   KC_TILD, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC, KC_CIRC, KC_AMPR,    KC_ASTR,    KC_LPRN, KC_RPRN, KC_BSPC,
@@ -45,9 +44,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  _______, _______, _______, _______, _______, _______, _______, _______, KC_MNXT, KC_VOLD, KC_VOLU, KC_MPLY
 ),
 [_ADJUST] = LAYOUT_ortho_4x12(
-    _______, RESET,   DEBUG,  _______, _______, _______, _______, _______, _______,  _______, _______, KC_DEL ,
-    _______, _______, _______,  _______,  _______,  AG_NORM, AG_SWAP, QWERTY,  COLEMAK, _______, _______,  _______,
-    _______, _______,  _______,  _______,  _______,  _______,   _______,  TERM_ON, TERM_OFF, _______, _______, _______,
+    _______, _______, _______,  _______, _______, _______, _______, _______, _______,  _______, _______, KC_DEL ,
+    _______, _______, _______,  _______,  _______,  _______, _______, QWERTY,  COLEMAK, _______, _______,  _______,
+    _______, _______,  _______,  _______,  _______,  _______,   _______, _______, _______, _______, _______, _______,
     _______, _______, _______, _______, _______, _______, _______, _______, _______,  _______, _______, _______
 )
 };
